@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <title>Recados</title>    
+    <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body id="bodyRecados">
+    <h1 id="h1Recados"><u>MEUS RECADOS</u></h1>
+    <head>
+        <h2 id="logado"></h2>
+        <button id="botaoSair" onclick="sair()">SAIR</button>
+    </head>
+    <section id="secaoInputs">
+      <input
+        type="text"
+        name="descricao"
+        id="inputDescricao"
+        placeholder="Descrição"
+      />
+      <input
+        type="text"
+        name="detalhamento"
+        id="inputDetalhamento"
+        placeholder="Detalhamento"
+      />
+      <button type="submit" id="botaoSalvar">SALVAR</button>
+    </section>
+    <section id="secaoTable">
+      <table id="table">
+        <thead>
+          <tr id ="trTable">
+            <th>#</th>
+            <th>Descrição</th>
+            <th>Detalhamento</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+    <section id="inputsEditar">
+        <input type="text" name="inputDescricaoEditar" id="inputDescricaoEditar" placeholder="Editar descrição">
+        <input type="text" name="inputDetalhamentoEditar" id="inputDetalhamentoEditar" placeholder="Editar detalhamento">
+        <button type="submit" id="botaoEditar">EDITAR</button>
+    </section>
+    
+    <script src="recados.js"></script>
+  </body>
+</html>

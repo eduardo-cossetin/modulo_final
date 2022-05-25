@@ -1,0 +1,289 @@
+body
+{   
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+#container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(231, 231, 231);
+    align-items: center;
+}
+
+.esquerda{   
+    background-color: rgb(231, 231, 231);
+    height: 100%;    
+    width: 40%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    position: relative;
+    left: -75px;   
+}
+
+.esquerda > img{
+    width: 100%;
+}
+
+#imagemEsquerda {
+    border: 2px solid;
+    border-color: rgb(123, 123, 123);
+}
+
+.login {    
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;    
+    
+}
+
+.login2 {    
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;        
+}
+
+
+.inputs > input {
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 16px;    
+}
+
+.inputs{
+    margin-bottom: 16px;
+}
+
+#inputUsername {
+    margin-right: -7px;
+    width: 200px;
+    padding: 10px;
+    border: solid 1px;
+    border-color: rgb(209, 209, 209);
+}
+
+#inputPassword {
+    padding: 10px;
+    border: solid 1px;
+    border-color: rgb(209, 209, 209);
+}
+
+#botaoEntrar {
+    font-size: 16px; 
+    background-color: #4bb354;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 450px;
+    margin-bottom: 8px;
+}
+
+#criarConta {
+    color: #4bb354;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#titulo {
+    color: rgb(101, 101, 101);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#inputContainer{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+#inputUsername2 {
+    font-size: 16px; 
+    padding: 10px;
+    border: solid 1px;
+    border-color: rgb(209, 209, 209);
+    width: 90%;
+    margin: 16px;
+}
+
+#inputPassword2{
+    font-size: 16px; 
+    padding: 10px;
+    border: solid 1px;
+    border-color: rgb(209, 209, 209);
+    width: 90%;
+    margin: 16px;
+}
+
+#inputRepeatPassword2{
+    font-size: 16px; 
+    padding: 10px;
+    border: solid 1px;
+    border-color: rgb(209, 209, 209);
+    width: 90%;
+    margin: 16px;
+}
+
+#botaoCriarConta {
+    font-size: 16px; 
+    background-color: #4bb354;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 480px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    margin-left: 10px;
+}
+
+/* 
+<--pagina de recados--> */
+
+
+
+#bodyRecados {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#secaoInputs {
+    padding: 10px;
+    width: 85%;     
+}
+
+#inputDescricao {
+    width: 20%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#inputDetalhamento{
+    width: 50%;
+    height: 30px;    
+    border-radius: 5px;
+}
+
+#botaoSalvar {
+    background-color: blue;
+    color: white;    
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#logado {
+    position: relative;
+    right: 35vw;
+    padding: 25px;
+    background-color: rgb(220, 220, 220);
+    border-radius: 50px;
+}
+
+#botaoSair{
+    position: relative;
+    left: 40vw;
+    bottom: 30vh;
+    background-color: rgb(2, 0, 118);
+    border-radius: 3px;
+    color: aliceblue;
+    padding: 10px;
+}
+
+#secaoTable {
+    padding: 25px;
+}
+
+.botao-apagar {
+    background-color: red;
+    color: white;
+}
+
+.botao-editar {
+    background-color: rgb(0, 103, 2);
+    color: white;
+}
+
+
+table {
+    width: 90vw;
+    height: 50px;
+}
+
+tr {
+    height: 50px;
+}
+
+td{
+    height: 25px;
+}
+
+th {
+    height: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+
+#trTable {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+tr:hover {background-color: #f5f5f5}
+tr:nth-child(even) {background-color: #f2f2f2}
+
+#h1Recados{
+    color: rgb(0, 47, 2);
+}
+
+
+#inputsEditar{    
+    display: flex;
+    width: 85%;        
+    padding: 10px;
+}
+
+#conteinerEditar{
+    display: flex;
+}
+
+#inputDescricaoEditar{
+    display: none;
+    width: 20%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#inputDetalhamentoEditar{
+    display: none;
+    width: 50%;
+    height: 30px;    
+    border-radius: 5px;
+    position: relative;
+    left: 5px;
+}
+
+#botaoEditar {
+    display: none;
+    background-color: #049410;
+    color: white;    
+    padding: 8px;
+    border-radius: 5px;
+    
+    position: relative;
+    left: 10px;
+}
