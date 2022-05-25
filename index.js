@@ -12,8 +12,8 @@ botaoEntrar.addEventListener ("click",() => {
     if (sameUserName !== undefined && samePassword !== undefined ){
        let pessoaLogada = {
            name: inputUsername.value,
-           password: inputPassword.value,
-       }
+           password: inputPassword.value
+       }   
        window.location.href="recados.html";
        let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
        localStorage.setItem('token', token);

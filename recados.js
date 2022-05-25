@@ -9,9 +9,7 @@ let inputDetalhamentoEditar = document.getElementById('inputDetalhamentoEditar')
 let botaoEditar = document.getElementById('botaoEditar');
 
 // localStorage.clear()
-
 const recados = JSON.parse(localStorage.getItem("recados") || "[]");
-
 function proximoId() {
   //let max = recados[0].id;
   const recados = JSON.parse(localStorage.getItem("recados") || "[]");
@@ -29,7 +27,7 @@ function adicionarRecado(inputDescricao, inputDetalhamento) {
     id: proximoId(),
     inputDescricao,
     inputDetalhamento,
-  };
+  }
   if (recado.inputDescricao == "") {
     alert("Você precisa preencher o campo Descrição!");
     return;
@@ -43,6 +41,7 @@ function adicionarRecado(inputDescricao, inputDetalhamento) {
   limpaTabela();
   populaLista();
 }
+
 botaoSalvar.addEventListener("click", () => {
   adicionarRecado(inputDescricao.value, inputDetalhamento.value);
   const recados = JSON.parse(localStorage.getItem("recados") || "[]");
@@ -92,7 +91,7 @@ function editarRecado(id){
     inputDetalhamentoEditar.style.display = "block";
     botaoEditar.style.display = "block";
     botaoEditar.addEventListener("click", ()=> {
-        adicionarRecadoEditado(id, inputDescricao = inputDescricaoEditar.value, inputDetalhamento = inputDetalhamentoEditar.value)
+        adicionarRecadoEditado(id, inputDescricao = inputDescricaoEditar.value, inputDetalhamento = inputDetalhamentoEditar.value);
     })
     const index = recados.findIndex((item) => item.id == id);
     function adicionarRecadoEditado(id, inputDescricao = inputDescricaoEditar.value, inputDetalhamento = inputDetalhamentoEditar.value){

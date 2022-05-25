@@ -25,7 +25,6 @@ botaoCriarConta.addEventListener('click', () => {
     adicionarPessoa(inputUsername2.value, inputPassword2.value);   
     location.href="index.html";
 })
-
 function adicionarPessoa (userName, password){    
     const pessoasCadastradas = JSON.parse(localStorage.getItem("pessoasCadastradas") || ("[]"));
     let pessoa = 
