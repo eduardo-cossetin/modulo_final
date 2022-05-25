@@ -4,9 +4,9 @@ let botaoSalvar = document.getElementById("botaoSalvar");
 let botaoApagar = document.getElementById("botaoDeletar");
 let botaoDeletarId = document.getElementsByClassName(".botaoDeletarId");
 
-let inputDescricaoEditar = document.getElementById('inputDescricaoEditar')
-let inputDetalhamentoEditar = document.getElementById('inputDetalhamentoEditar')
-let botaoEditar = document.getElementById('botaoEditar')
+let inputDescricaoEditar = document.getElementById('inputDescricaoEditar');
+let inputDetalhamentoEditar = document.getElementById('inputDetalhamentoEditar');
+let botaoEditar = document.getElementById('botaoEditar');
 
 // localStorage.clear()
 
@@ -23,7 +23,6 @@ function proximoId() {
   });
   return max + 1;
 }
-
 function adicionarRecado(inputDescricao, inputDetalhamento) {
   const recados = JSON.parse(localStorage.getItem("recados") || "[]");
   let recado = {
@@ -44,17 +43,15 @@ function adicionarRecado(inputDescricao, inputDetalhamento) {
   limpaTabela();
   populaLista();
 }
-
 botaoSalvar.addEventListener("click", () => {
   adicionarRecado(inputDescricao.value, inputDetalhamento.value);
   const recados = JSON.parse(localStorage.getItem("recados") || "[]");
-  inputDescricao.value = ""
-  inputDetalhamento.value = ""
+  inputDescricao.value = "";
+  inputDetalhamento.value = "";
 });
-
 function populaLista() {
   const recados = JSON.parse(localStorage.getItem("recados") || "[]");
-  limpaTabela()
+  limpaTabela();
   recados.forEach((item) => {
     const linha = document.createElement("tr");
       linha.innerHTML += `<td>${item.id}</td>
@@ -67,12 +64,10 @@ function populaLista() {
     document.querySelector("#table>tbody").appendChild(linha);
   });
 }
-
 function limpaTabela() {
   const linhas = document.querySelectorAll("#table>tbody tr");
   linhas.forEach((linha) => linha.parentNode.removeChild(linha));
 }
-
 function apagarRecado(id) {      
   const recados = JSON.parse(localStorage.getItem("recados") || "[]");
   const index = recados.findIndex((item) => item.id == id);
@@ -80,57 +75,46 @@ function apagarRecado(id) {
   localStorage.setItem("recados", JSON.stringify(recados));
   populaLista();
 }
-
 populaLista();
-
-let pessoaLogada = JSON.parse(localStorage.getItem("pessoaLogada"))
-let logado = document.getElementById('logado')
-
-
-logado.innerHTML = `Olá, ${pessoaLogada.name}!`
-
+let pessoaLogada = JSON.parse(localStorage.getItem("pessoaLogada"));
+let logado = document.getElementById('logado');
+logado.innerHTML = `Olá, ${pessoaLogada.name}!`;
 if(localStorage.getItem('token') == null){
-    alert("Você precisa estar logado para acessar os recados")    
-    location.href="index.html" 
+    alert("Você precisa estar logado para acessar os recados")    ;
+    location.href="index.html" ;
 }
-
 function sair(){
-    localStorage.removeItem("token")
-    location.href="index.html"
+    localStorage.removeItem("token");
+    location.href="index.html";
 }
-
 function editarRecado(id){
-    inputDescricaoEditar.style.display = "block"
-    inputDetalhamentoEditar.style.display = "block"
-    botaoEditar.style.display = "block"
-
+    inputDescricaoEditar.style.display = "block";
+    inputDetalhamentoEditar.style.display = "block";
+    botaoEditar.style.display = "block";
     botaoEditar.addEventListener("click", ()=> {
         adicionarRecadoEditado(id, inputDescricao = inputDescricaoEditar.value, inputDetalhamento = inputDetalhamentoEditar.value)
-        
     })
-
     const index = recados.findIndex((item) => item.id == id);
-
     function adicionarRecadoEditado(id, inputDescricao = inputDescricaoEditar.value, inputDetalhamento = inputDetalhamentoEditar.value){
-        const index = recados.findIndex((item) => item.id == id);        
-        
-        recados[index].inputDescricao = inputDescricao,
-
-
-        recados[index].inputDetalhamento = inputDetalhamento
-        
-        localStorage.setItem("recados", JSON.stringify(recados));
-
-        limpaTabela()
-       
-        populaLista() 
-        
-        inputDescricaoEditar.value = ""
-        inputDetalhamentoEditar.value = ""
-            
-        inputDescricaoEditar.style.display = "none"
-        inputDetalhamentoEditar.style.display = "none"
-        botaoEditar.style.display = "none"
+        const index = recados.findIndex((item) => item.id == id);  
+        recados[index].inputDescricao = inputDescricao;
+        recados[index].inputDetalhamento = inputDetalhamento;
+        if(recados[index].inputDescricao ==""){
+            for(let i = 0; i < 1 ; i++){
+                 alert("Você deve preencher o campo descrição!")};
+        }   else if (recados[index].inputDetalhamento ==""){
+            for(let i = 0; i < 1 ; i++){
+                alert("Você deve preencher o campo Detalhamento!")};
+        } else {
+            localStorage.setItem("recados", JSON.stringify(recados));
+            limpaTabela();
+            populaLista();
+            inputDescricaoEditar.value = "";
+            inputDetalhamentoEditar.value = "";
+            inputDescricaoEditar.style.display = "none";
+            inputDetalhamentoEditar.style.display = "none";
+            botaoEditar.style.display = "none";
+        }
     }
 }
 
